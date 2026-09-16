@@ -1,0 +1,100 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f4f6f9;
+  color: #24292f;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.topbar h1 { font-size: 22px; font-weight: 600; }
+
+.hint { color: #8b949e; font-size: 13px; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.stat-label { color: #57606a; font-size: 12px; margin-bottom: 8px; }
+
+.stat-value { font-size: 24px; font-weight: 700; color: #0969da; }
+
+.panel {
+  background: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.panel-head h2 { font-size: 16px; font-weight: 600; }
+
+.btn {
+  background: #0969da;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn:hover { background: #0a58ca; }
+
+table { width: 100%; border-collapse: collapse; }
+
+th, td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid #f0f2f5;
+  font-size: 13px;
+}
+
+th { background: #f6f8fa; color: #57606a; font-weight: 600; }
+
+tbody tr:hover { background: #f6f8fa; }
+
+.empty { text-align: center; color: #8b949e; padding: 24px; }
+
+.status-pending { color: #9a6700; }
+.status-running { color: #0969da; }
+.status-completed { color: #1a7f37; }
+.status-failed { color: #cf222e; }
+.status-cancelled { color: #6e7781; }
+
+.footer {
+  text-align: center;
+  color: #8b949e;
+  font-size: 12px;
+  padding: 16px 0;
+}
+
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+}

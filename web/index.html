@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>压测平台</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>压测平台控制台</h1>
+    <span id="api-key" class="hint">API Key: loadtest-secret-key</span>
+  </header>
+
+  <section id="stats" class="stats-grid">
+    <div class="stat-card"><div class="stat-label">目标服务</div><div class="stat-value" id="st-targets">-</div></div>
+    <div class="stat-card"><div class="stat-label">场景</div><div class="stat-value" id="st-scenarios">-</div></div>
+    <div class="stat-card"><div class="stat-label">测试计划</div><div class="stat-value" id="st-plans">-</div></div>
+    <div class="stat-card"><div class="stat-label">执行器</div><div class="stat-value" id="st-executors">-</div></div>
+    <div class="stat-card"><div class="stat-label">执行记录</div><div class="stat-value" id="st-executions">-</div></div>
+    <div class="stat-card"><div class="stat-label">运行中</div><div class="stat-value" id="st-running">-</div></div>
+    <div class="stat-card"><div class="stat-label">总请求数</div><div class="stat-value" id="st-requests">-</div></div>
+    <div class="stat-card"><div class="stat-label">全局错误率</div><div class="stat-value" id="st-error-rate">-</div></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>执行记录</h2>
+      <button id="btn-refresh" class="btn">刷新</button>
+    </div>
+    <table id="exec-list">
+      <thead>
+        <tr>
+          <th>ID</th><th>计划 ID</th><th>执行器 ID</th><th>状态</th>
+          <th>总请求</th><th>错误数</th><th>错误率</th><th>创建时间</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2>指标样本</h2></div>
+    <table id="metric-list">
+      <thead>
+        <tr><th>ID</th><th>执行 ID</th><th>TPS</th><th>平均延迟(ms)</th><th>P99(ms)</th><th>错误率</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <footer class="footer">纯 Go 标准库 · 零第三方依赖</footer>
+  <script src="/app.js"></script>
+</body>
+</html>
